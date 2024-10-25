@@ -1,0 +1,32 @@
+.video-wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
+  margin: 100px;
+}
+
+.head{
+  color:white;
+  text-align: center;
+  padding: 30px;
+}
+.video-embed {
+
+  height:500px;
+  max-width: 500px; 
+  border-radius: 8px; 
+  box-shadow: 10px 4px 12px 10px rgb(189, 187, 187); 
+}
+
+.video-section{
+  margin-top:58px;
+}
+
+/* .btn-space{
+
+  background-color: red;
+margin-left: 600px;
+
+  
+} */

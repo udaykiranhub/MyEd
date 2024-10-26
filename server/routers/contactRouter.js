@@ -4,10 +4,12 @@ const Contact = require('../schemas/contactSchema'); // Adjust the path as neces
 
 const router = express.Router();
 
+
+
 // Contact form submission route
 router.post('/submit', async (req, res) => {
-  const { firstName, lastName, schoolName, city, email, phoneNumber, message } = req.body;
-
+  const { firstName, lastName, schoolName, city, email, phone, message } = req.body;
+console.log(req.body);
   try {
     // Create a new contact entry
     const newContact = new Contact({
@@ -16,12 +18,12 @@ router.post('/submit', async (req, res) => {
       schoolName,
       city,
       email,
-      phoneNumber,
-      message,
+      phone,
+      message
     });
 
     const existingContact = await Contact.findOne({
-        $or: [{ email }, { phoneNumber }],
+        $or: [{ email }, { phone }],
       });
   
       if (existingContact) {
@@ -31,18 +33,21 @@ router.post('/submit', async (req, res) => {
     // Save contact to the database
     await newContact.save()
     .then(function(data){
+      console.log(data)
         console.log('Contact data saved sucessfully!');
+        return res.status(201).json({ message: 'Contact information submitted successfully.' });
     })
     .catch(function(err){
-        console.log('Erro in  the contact details saving!@ form!');
+        console.log('Error in  the contact details saving!@ form!'+err);
+        
+    return res.status(201).json({ message: 'Enter Data in correct format!' });
     })
-    return res.status(201).json({ message: 'Contact information submitted successfully.' });
 
   } 
   
   catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Server error.' });
+    return res.status(500).json({ message: ' Internal Server error.' });
   }
 });
 

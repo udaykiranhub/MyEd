@@ -10,20 +10,19 @@ require("dotenv").config();
 app.use(express.json());
 //files
 
-const contact=require("./routers/contactRouter")
+const contact=require("./routers/contactRouter");
+const purchase=require("./routers/purchase");
+const prices=require("./routers/pricecount")
+
+
 //cors
 
-// app.use(cors({
-//     origin:["url"],
-//     method:["POST","GET"],
-//     credentials:true
-// }))
-
 app.use(cors({
-    origin: ["http://localhost:3000"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+    origin:["http://localhost:3000"],
+    method:["POST","GET"],
+    credentials:true
+}))
+
 
 //Connecting to DataBase
 
@@ -42,7 +41,8 @@ mongoose.connect(process.env.database)
 
 app.use("/",contact);
 
-
+app.use("/",purchase);
+app.use("/",prices);
 
 app.listen(5000,function(err){
     if(err){

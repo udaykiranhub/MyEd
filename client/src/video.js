@@ -2,7 +2,7 @@ import React from 'react';
 import './video.css';
 
 import { Button } from 'react-bootstrap';
-
+import PricingCounts from './pricecount';
 const VideoSection = () => {
   return (
     <div className="video-section">
@@ -31,6 +31,7 @@ const VideoSection = () => {
     }}>
     Talk to an Expert
   </Button>
+
 </div>
 
 
@@ -50,6 +51,7 @@ const VideoSection = () => {
 
 
       </div>
+      <PricingCounts/>
     </div>
   );
 };

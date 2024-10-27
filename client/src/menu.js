@@ -16,12 +16,17 @@ const MyNavbar = () => {
             <Nav.Link  as={Link}  to="/" style={{ color: "white", fontSize: "20px" }}>
               Home
             </Nav.Link>
+            <Nav.Link     as={Link}  to="/pricing" style={{ color: "white", fontSize: "20px" }}>
+       Pricing
+            </Nav.Link>
             <Nav.Link   as={Link}  to="/features" style={{ color: "white", fontSize: "20px" }}>
               Features
             </Nav.Link>
-            <Nav.Link     to="/" style={{ color: "white", fontSize: "20px" }}>
-              Pricing
+   
+            <Nav.Link     as={Link}  to="/about" style={{ color: "white", fontSize: "20px" }}>
+              About
             </Nav.Link>
+  
           </Nav>
         </Navbar.Collapse>
       </Container>

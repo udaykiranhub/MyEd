@@ -5,6 +5,7 @@ import './features.css';
 const Features = () => {
   return (
     <div className="features-section">
+    
       <h3>Trusted by Teachers at over 1,000 of the  india's leading Schools</h3>
       <h2>Features that work for your future.</h2>
       <Row className="justify-content-center">

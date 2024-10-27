@@ -9,7 +9,7 @@ const Pricing = () => {
   const [name,setName]=useState('')
 const [data,setData]=useState(null)
 const [status,setStatus]=useState('');
-const [count,setCount]=useState('')
+
 
   const Buy = (price) => {
     setSelectedPrice(price);  
@@ -46,7 +46,7 @@ try{
  setData(message.data);
 //  setCount(message.purchases)
  console.log("return data is:",data);
-
+setShowModal(false)
 }
 catch(err){
     console.log("Error in the Purchasing the Course!",err);

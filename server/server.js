@@ -13,7 +13,7 @@ app.use(express.json());
 const contact=require("./routers/contactRouter");
 const purchase=require("./routers/purchase");
 const prices=require("./routers/pricecount")
-
+const talk=require("./routers/talk")
 
 //cors
 
@@ -45,6 +45,8 @@ app.use("/",contact);
 
 app.use("/",purchase);
 app.use("/",prices);
+
+app.use("/",talk)
 
 app.listen(5000,function(err){
     if(err){

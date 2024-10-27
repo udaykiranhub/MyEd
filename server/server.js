@@ -35,7 +35,9 @@ mongoose.connect(process.env.database)
 })
 
 
-
+app.get("/",function(req,res){
+res.send("Hello");
+})
 
 //Router configuration
 

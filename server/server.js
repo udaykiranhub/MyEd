@@ -18,7 +18,7 @@ const prices=require("./routers/pricecount")
 //cors
 
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["http://localhost:3000","https://my-ed-five.vercel.app"],
     method:["POST","GET"],
     credentials:true
 }))
